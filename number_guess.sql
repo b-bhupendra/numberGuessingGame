@@ -44,30 +44,36 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: user_info; Type: TABLE; Schema: public; Owner: freecodecamp
+-- Name: users; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
-CREATE TABLE public.user_info (
-    username character varying(30),
-    game_played integer DEFAULT 0,
-    lowest_guess integer DEFAULT 0
+CREATE TABLE public.users (
+    username character varying(80),
+    no_of_games integer DEFAULT 0,
+    best_gaame integer DEFAULT 2147483647
 );
 
 
-ALTER TABLE public.user_info OWNER TO freecodecamp;
+ALTER TABLE public.users OWNER TO freecodecamp;
 
 --
--- Data for Name: user_info; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.users VALUES ('user_1656167261752', 2, 72);
+INSERT INTO public.users VALUES ('user_1656167261753', 5, 98);
+INSERT INTO public.users VALUES ('user_1656167292375', 2, 700);
+INSERT INTO public.users VALUES ('user_1656167292376', 5, 266);
+INSERT INTO public.users VALUES ('user_1656167413579', 2, 414);
+INSERT INTO public.users VALUES ('user_1656167413580', 5, 31);
 
 
 --
--- Name: user_info user_info_username_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+-- Name: users users_username_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
-ALTER TABLE ONLY public.user_info
-    ADD CONSTRAINT user_info_username_key UNIQUE (username);
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_username_key UNIQUE (username);
 
 
 --
